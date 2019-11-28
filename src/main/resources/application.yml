@@ -1,0 +1,71 @@
+server:
+  port: 1111
+
+security:
+  ignored: /**
+  
+spring:
+    application:
+       name: app-name
+    freemarker:
+      check-template-location: false
+    messages: 
+       basename: i18n/messages
+       encoding: UTF-8
+    main:
+       allow-bean-definition-overriding: true
+       
+
+    datasource:
+       type: com.zaxxer.hikari.HikariDataSource
+       driver-class-name: com.mysql.cj.jdbc.Driver
+       url: jdbc:mysql://localhost:3306/cloud
+       username: root
+       password: welcome_123!
+       hikari:
+         poolName: Hikari
+         auto-commit: false
+    jpa:  
+       database: MYSQL
+       show-sql: true
+       hibernate.ddl-auto: none 
+       properties:
+         hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+
+    mail:
+      host: smtp.gmail.com
+      port: 587
+      username: mhari.techie@gmail.com
+      password: 09g81a0505
+      protocol: smtp
+      properties:
+         mail.smtp.auth: true
+         mail.smtp.starttls.enable: true
+    thymeleaf:
+      cache: false
+
+
+jhipster:
+  clientApp:
+     name: devoxx
+  mail: 
+    from: mhari.techie@gmail.com
+    base-url: http://localhost:1111
+  swagger:
+    title: Hipster Application API
+    description: Hipster Documentation
+    version: 1.0.1
+    host:  localhost:1111
+    protocols: {}
+    useDefaultResponseMessages:  true
+    defaultIncludePattern: /api/.*
+    
+  security:
+    authentication:
+      jwt:
+        base64-secret: weNFYEEwaR2tR7cIImha/T4cEjk2LqSJ+1tBzqFgGOx5QkL1X5I8kHrJp4qICko7ignTLdklDcarFTXL/QVbsg==
+        token-validity-in-seconds: 86400
+        token-validity-in-seconds-for-remember-me: 2592000 
+    rememberme:
+        key: a49d58ee907a0a612c934082157e32c7ade57532 
+        # security configuration (this key should be unique for your application, and kept secret)
